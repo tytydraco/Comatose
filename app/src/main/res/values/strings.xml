@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Comatose</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+</resources>
