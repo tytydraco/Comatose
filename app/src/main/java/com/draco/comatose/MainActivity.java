@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
     boolean enabled() {
         String currentDeviceIdleConstants = Settings.Global.getString(getContentResolver(), "device_idle_constants");
         //Log.d("CURRENT_STATUS", currentDeviceIdleConstants);
-        // TODO: fix this bullshit
         return !(currentDeviceIdleConstants == null);
     }
 
