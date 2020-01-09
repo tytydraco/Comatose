@@ -2,6 +2,7 @@ package com.draco.comatose
 
 import android.Manifest
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -14,11 +15,13 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.work.WorkManager
 import com.google.android.material.checkbox.MaterialCheckBox
 import kotlin.concurrent.fixedRateTimer
 
+
 class MainActivity : AppCompatActivity() {
+    private val intentReceiver = IntentReceiver()
+
     private val adbCommand = "pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS"
 
     private lateinit var sharedPreferences: SharedPreferences
@@ -86,6 +89,11 @@ class MainActivity : AppCompatActivity() {
         startOnBoot = findViewById(R.id.start_on_boot)
 
         checkPermissions()
+
+        /* Register screen off receiver */
+        val screenStateFilter = IntentFilter()
+        screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF)
+        registerReceiver(intentReceiver, screenStateFilter)
 
         setupUI()
 
