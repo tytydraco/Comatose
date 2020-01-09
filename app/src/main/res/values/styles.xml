@@ -14,9 +14,14 @@
     <style name="TextTheme" parent="TextAppearance.AppCompat.Subhead">
         <item name="android:paddingStart">20dp</item>
         <item name="android:paddingEnd">20dp</item>
-        <item name="android:paddingBottom">10dp</item>
         <item name="android:fontFamily">monospace</item>
         <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="CheckboxTheme" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:fontFamily">monospace</item>
     </style>
 
     <style name="ActionBarTheme" parent="ThemeOverlay.MaterialComponents.ActionBar">

@@ -2,9 +2,11 @@ package com.draco.comatose
 
 import android.Manifest
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.provider.Settings
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -12,30 +14,26 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.work.WorkManager
+import com.google.android.material.checkbox.MaterialCheckBox
 import kotlin.concurrent.fixedRateTimer
 
 class MainActivity : AppCompatActivity() {
     private val adbCommand = "pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS"
 
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+
     private lateinit var enable: Button
     private lateinit var disable: Button
     private lateinit var about: TextView
     private lateinit var status: TextView
-
-    private val constants =
-        "inactive_to=2592000000," +
-        "motion_inactive_to=2592000000," +
-        "light_after_inactive_to=15000," +
-        "light_pre_idle_to=30000," +
-        "light_max_idle_to=86400000," +
-        "light_idle_to=43200000," +
-        "light_idle_maintenance_max_budget=30000," +
-        "light_idle_maintenance_min_budget=10000," +
-        "min_time_to_alarm=60000"
+    private lateinit var startOnBoot: MaterialCheckBox
 
     private fun setupUI() {
         enable.setOnClickListener {
-            Settings.Global.putString(contentResolver, "device_idle_constants", constants)
+            /* We should see the status automatically update */
+            EnforcerWorker.enqueue(this)
 
             if (enable.animation == null || enable.animation.hasEnded()) {
                 val bubbleAnimation = AnimationUtils.loadAnimation(this, R.anim.bubble)
@@ -47,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         disable.setOnClickListener {
             Settings.Global.putString(contentResolver, "device_idle_constants", null)
+            EnforcerWorker.cancel(this)
 
             if (disable.animation == null || disable.animation.hasEnded()) {
                 val bubbleAnimation = AnimationUtils.loadAnimation(this, R.anim.bubble)
@@ -54,6 +53,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             updateStatusText()
+        }
+
+        startOnBoot.isChecked = sharedPreferences.getBoolean("startOnBoot", false)
+
+        startOnBoot.setOnCheckedChangeListener { _, checked ->
+            editor.putBoolean("startOnBoot", checked)
+            editor.apply()
         }
     }
 
@@ -70,17 +76,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        editor = sharedPreferences.edit()
+
         enable = findViewById(R.id.enable)
         disable = findViewById(R.id.disable)
         about = findViewById(R.id.about)
         status = findViewById(R.id.status)
+        startOnBoot = findViewById(R.id.start_on_boot)
 
         checkPermissions()
 
         setupUI()
 
-        /* Every 10 seconds, update the status text */
-        fixedRateTimer("statusCheck", false, 0, 10000) {
+        /* Every second, update the status text */
+        fixedRateTimer("statusCheck", false, 0, 1000) {
             updateStatusText()
         }
     }
@@ -88,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     /* If the constants in secure settings match our settings */
     private fun enabled(): Boolean {
         val currentConstants = Settings.Global.getString(contentResolver, "device_idle_constants")
-        return currentConstants == constants
+        return currentConstants == idleConstants
     }
 
     private fun hasPermissions(): Boolean {

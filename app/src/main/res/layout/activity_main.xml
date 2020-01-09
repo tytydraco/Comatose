@@ -27,6 +27,16 @@
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/start_on_boot"/>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        style="@style/CheckboxTheme"
+        android:id="@+id/start_on_boot"
+        android:text="@string/start_on_boot"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_above="@id/buttonRow"/>
 
     <LinearLayout
