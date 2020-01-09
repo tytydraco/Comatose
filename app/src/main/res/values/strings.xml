@@ -2,4 +2,30 @@
     <string name="app_name">Comatose</string>
     <string name="enable">Enable</string>
     <string name="disable">Disable</string>
+
+    <string name="about">
+"
+Comatose works by adjusting a Secure Setting called 'device_idle_constants'. These settings are called Secure Settings because they require elevated privileges, which can be granted with root access or ADB.
+
+The 'device_idle_constants' setting tells the device how to perform basic radio scans in idle, including the device's WiFi, Bluetooth, Location, NFC, etc.
+
+Keep in mind, these idle constants only affect the device when it is in deep sleep. Deep sleep occurs minutes after the screen is turned off, so Comatose does its best work when the device is left alone for a long time, such as at night or in a backpack.
+
+Usually, the OEM tunes these values, but Comatose tunes them to be aggressive. The result is a consistently lower idle .
+
+Please enjoy Comatose, and send any questions my way:
+Email (slow): tylernij@gmail.com
+Telegram (fast): tytydraco
+"
+    </string>
+
+    <string name="adb_tutorial">
+"This app needs a special permission to set your device animation scales that can only be granted using a computer. This is a one time procedure.
+
+Root is NOT required!
+
+Once ADB is setup, connect the device to a computer and run the following command:
+
+"
+    </string>
 </resources>

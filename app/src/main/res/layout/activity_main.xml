@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,13 +7,57 @@
     tools:context="com.draco.comatose.MainActivity"
     android:orientation="vertical">
 
-    <Button
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/toggle"
-        android:text="@string/enable"
-        android:background="@color/colorGreen"
-        android:textSize="50sp"
-        android:textColor="#ffffff" />
+        android:layout_height="wrap_content"
+        android:layout_above="@id/status"
+        android:paddingBottom="10dp">
+        <TextView
+            style="@style/TextTheme"
+            android:id="@+id/about"
+            android:text="@string/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 
-</LinearLayout>
+    <TextView
+        style="@style/TextTheme"
+        android:id="@+id/status"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonRow"/>
+
+    <LinearLayout
+        android:id="@+id/buttonRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:clipToPadding="false">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/ButtonTheme"
+            android:id="@+id/enable"
+            app:backgroundTint="@color/colorEnable"
+            android:text="@string/enable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/ButtonTheme"
+            android:id="@+id/disable"
+            app:backgroundTint="@color/colorDisable"
+            android:text="@string/disable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</RelativeLayout>
