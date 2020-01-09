@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var about: TextView
     private lateinit var status: TextView
     private lateinit var startOnBoot: MaterialCheckBox
+    private lateinit var startOnSleep: MaterialCheckBox
 
     private fun setupUI() {
         enable.setOnClickListener {
@@ -59,9 +60,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         startOnBoot.isChecked = sharedPreferences.getBoolean("startOnBoot", false)
+        startOnSleep.isChecked = sharedPreferences.getBoolean("startOnSleep", false)
 
         startOnBoot.setOnCheckedChangeListener { _, checked ->
             editor.putBoolean("startOnBoot", checked)
+            editor.apply()
+        }
+
+        startOnSleep.setOnCheckedChangeListener { _, checked ->
+            editor.putBoolean("startOnSleep", checked)
             editor.apply()
         }
     }
@@ -87,6 +94,7 @@ class MainActivity : AppCompatActivity() {
         about = findViewById(R.id.about)
         status = findViewById(R.id.status)
         startOnBoot = findViewById(R.id.start_on_boot)
+        startOnSleep = findViewById(R.id.start_on_sleep)
 
         checkPermissions()
 

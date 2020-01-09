@@ -15,7 +15,8 @@ class IntentReceiver : BroadcastReceiver() {
             EnforcerWorker.enqueue(context)
 
         /* Screen Off */
-        if (intent!!.action == Intent.ACTION_SCREEN_OFF)
+        if (sharedPreferences.getBoolean("startOnSleep", false) &&
+                intent!!.action == Intent.ACTION_SCREEN_OFF)
             EnforcerWorker.enqueue(context)
     }
 
