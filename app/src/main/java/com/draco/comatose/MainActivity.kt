@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var status: TextView
 
     private val constants =
-        "device_idle_constants inactive_to=2592000000," +
+        "inactive_to=2592000000," +
         "motion_inactive_to=2592000000," +
         "light_after_inactive_to=15000," +
         "light_pre_idle_to=30000," +
