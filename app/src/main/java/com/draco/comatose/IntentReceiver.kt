@@ -3,7 +3,7 @@ package com.draco.comatose
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 
 class IntentReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
