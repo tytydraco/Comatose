@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Comatose.iml" filepath="$PROJECT_DIR$/Comatose.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/Comatose-app.iml" filepath="$PROJECT_DIR$/app/Comatose-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Desktop-Comatose.iml" filepath="$PROJECT_DIR$/Desktop-Comatose.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Desktop-Comatose-app.iml" filepath="$PROJECT_DIR$/app/Desktop-Comatose-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
