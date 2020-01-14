@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.google.android.material.checkbox.MaterialCheckBox
 import kotlin.concurrent.fixedRateTimer
@@ -109,6 +110,9 @@ class MainActivity : AppCompatActivity() {
         fixedRateTimer("statusCheck", false, 0, 1000) {
             updateStatusText()
         }
+
+        /* Dark mode follows system theme */
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
     }
 
     /* If the constants in secure settings match our settings */
