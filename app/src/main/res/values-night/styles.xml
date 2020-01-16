@@ -41,7 +41,7 @@
     </style>
 
     <!-- Colors for material alert dialogs -->
-    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Dialog.Alert">
         <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
         <item name="buttonBarNegativeButtonStyle">@style/Alert.Button.Neutral</item>
         <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>
