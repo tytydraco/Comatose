@@ -10,6 +10,7 @@
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="actionBarTheme">@style/ActionBarTheme</item>
         <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
     </style>
 
     <style name="TextTheme" parent="TextAppearance.AppCompat.Subhead">
@@ -37,6 +38,21 @@
         <item name="android:textSize">20sp</item>
         <item name="cornerRadius">10dp</item>
         <item name="elevation">20dp</item>
+    </style>
+
+    <!-- Colors for material alert dialogs -->
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Alert.Button.Neutral</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>
+    </style>
+
+    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Alert.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
 </resources>
