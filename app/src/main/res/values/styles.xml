@@ -11,6 +11,7 @@
         <item name="actionBarTheme">@style/ActionBarTheme</item>
         <item name="android:windowBackground">@color/colorPrimary</item>
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
     </style>
 
     <style name="TextTheme" parent="TextAppearance.AppCompat.Subhead">

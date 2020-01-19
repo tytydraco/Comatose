@@ -108,7 +108,9 @@ class MainActivity : AppCompatActivity() {
 
         /* Every second, update the status text */
         fixedRateTimer("statusCheck", false, 0, 1000) {
-            updateStatusText()
+            runOnUiThread {
+                updateStatusText()
+            }
         }
 
         /* Dark mode follows system theme */
