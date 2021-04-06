@@ -44,7 +44,7 @@ object DeviceIdleConstants {
     /**
      * Minimum time to stay in light idle mode after deep doze so that we do not exit maintenance mode too quickly
      */
-    const val MIN_DEEP_MAINTENANCE_TIE =            "min_deep_maintenance_time"
+    const val MIN_DEEP_MAINTENANCE_TIME =           "min_deep_maintenance_time"
 
     /**
      * How long we will wait to get a good location before idling
@@ -127,7 +127,7 @@ object DeviceIdleConstants {
     const val IDLE_FACTOR =                         "idle_factor"
 
     /**
-     * Minimum time until next alarm to entle idle mode
+     * Minimum time until next alarm to enter idle mode
      */
     const val MIN_TIME_TO_ALARM =                   "min_time_to_alarm"
 
