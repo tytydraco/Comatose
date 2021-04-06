@@ -1,5 +1,7 @@
 package com.draco.comatose.repositories.profiles
 
+import com.draco.comatose.repositories.constants.DeviceIdleConstants
+
 object DeviceIdleConstantsProfiles {
     val DEFAULT =             null
     const val LIGHT =         ""

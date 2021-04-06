@@ -1,6 +1,20 @@
 package com.draco.comatose.repositories.constants
 
 object DeviceIdleConstants {
+    const val LIGHT_AFTER_INACTIVE_TO =             "light_after_inactive_to"
+    const val LIGHT_PRE_IDLE_TO =                   "light_pre_idle_to"
+    const val LIGHT_IDLE_TO =                       "light_idle_to"
+    const val LIGHT_IDLE_FACTOR =                   "light_idle_factor"
+    const val LIGHT_MAX_IDLE_TO =                   "light_max_idle_to"
+    const val LIGHT_IDLE_MAINTENANCE_MIN_BUDGET =   "light_idle_maintenance_min_budget"
+    const val LIGHT_IDLE_MAINTENANCE_MAX_BUDGET =   "light_idle_maintenance_max_budget"
+    const val MIN_LIGHT_MAINTENANCE_TIME =          "min_light_maintenance_time"
+    const val MIN_DEEP_MAINTENANCE_TIE =            "min_deep_maintenance_time"
+    const val LOCATING_TO =                         "locating_to"
+    const val LOCATION_ACCURACY =                   "location_accuracy"
+    const val WAIT_FOR_UNLOCK =                     "wait_for_unlock"
+    const val PRE_IDLE_FACTOR_LONG =                "pre_idle_factor_long"
+    const val PRE_IDLE_FACTOR_SHORT =               "pre_idle_factor_short"
     const val INACTIVE_TO =                         "inactive_to"
     const val SENSING_TO =                          "sensing_to"
     const val MOTION_INACTIVE_TO =                  "motion_inactive_to"
