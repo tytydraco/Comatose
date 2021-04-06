@@ -1,4 +1,4 @@
-package com.draco.buoy.views
+package com.draco.comatose.views
 
 import android.content.Intent
 import android.os.Bundle
