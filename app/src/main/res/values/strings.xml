@@ -1,3 +1,69 @@
 <resources>
-    <string name="app_name">ComatoseV2</string>
+    <string name="app_name">Comatose</string>
+
+    <string name="title_permission">Permissions</string>
+
+    <string name="permission_title">Woah there!</string>
+    <string name="permission_message">We need a special permission to continue. Use ADB to run the following command (one line):</string>
+    <string name="permission_command">adb shell pm grant com.draco.comatose android.permission.WRITE_SECURE_SETTINGS</string>
+
+    <string name="please_wait">Waiting for permission</string>
+    <string name="copied">Copied to clipboard</string>
+
+    <string name="snackbar_intent_failed">Could not handle this action</string>
+
+    <string name="developer_url">https://www.github.com/tytydraco</string>
+    <string name="source_url">https://www.github.com/tytydraco/Comatose</string>
+    <string name="contact_url">mailto:tylernij@gmail.com</string>
+
+    <string name="export_share_title">Device Idle Constants</string>
+
+    <string name="category_profiles">Profiles</string>
+    <string name="category_share">Share</string>
+    <string name="category_about">About</string>
+    <string name="category_config">Configuration</string>
+
+    <string name="pref_profile_key_default">default</string>
+    <string name="pref_profile_title_default">Default</string>
+    <string name="pref_profile_summary_default">Use the device\'s default idle settings</string>
+
+    <string name="pref_profile_key_light">light</string>
+    <string name="pref_profile_title_light">Light</string>
+    <string name="pref_profile_summary_light">TODO</string>
+
+    <string name="pref_profile_key_moderate">moderate</string>
+    <string name="pref_profile_title_moderate">Moderate</string>
+    <string name="pref_profile_summary_moderate">TODO</string>
+
+    <string name="pref_profile_key_high">high</string>
+    <string name="pref_profile_title_high">High</string>
+    <string name="pref_profile_summary_high">TODO</string>
+
+    <string name="pref_profile_key_extreme">extreme</string>
+    <string name="pref_profile_title_extreme">Extreme</string>
+    <string name="pref_profile_summary_extreme">TODO</string>
+
+    <string name="pref_key_export">export</string>
+    <string name="pref_title_export">Export</string>
+    <string name="pref_summary_export">Share the device idle constants elsewhere</string>
+
+    <string name="pref_key_import">import</string>
+    <string name="pref_title_import">Import</string>
+    <string name="pref_summary_import">Configure using a new profile</string>
+
+    <string name="pref_developer_title">Developer</string>
+    <string name="pref_developer_summary">Tyler Nijmeh</string>
+    <string name="pref_developer_key">developer</string>
+
+    <string name="pref_source_title">Source code</string>
+    <string name="pref_source_summary">Check out this project on GitHub</string>
+    <string name="pref_source_key">source</string>
+
+    <string name="pref_contact_title">Contact</string>
+    <string name="pref_contact_summary">Email me with questions, comments, and concerns</string>
+    <string name="pref_contact_key">contact</string>
+
+    <string name="pref_licenses_title">Licenses</string>
+    <string name="pref_licenses_summary">View the open source licenses</string>
+    <string name="pref_licenses_key">licenses</string>
 </resources>

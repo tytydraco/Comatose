@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/category_profiles">
+        <Preference
+            android:title="@string/pref_profile_title_default"
+            android:summary="@string/pref_profile_summary_default"
+            android:key="@string/pref_profile_key_default"
+            android:icon="@drawable/ic_baseline_api_24" />
+        <Preference
+            android:title="@string/pref_profile_title_light"
+            android:summary="@string/pref_profile_summary_light"
+            android:key="@string/pref_profile_key_light"
+            android:icon="@drawable/ic_baseline_api_24" />
+        <Preference
+            android:title="@string/pref_profile_title_moderate"
+            android:summary="@string/pref_profile_summary_moderate"
+            android:key="@string/pref_profile_key_moderate"
+            android:icon="@drawable/ic_baseline_api_24" />
+        <Preference
+            android:title="@string/pref_profile_title_high"
+            android:summary="@string/pref_profile_summary_high"
+            android:key="@string/pref_profile_key_high"
+            android:icon="@drawable/ic_baseline_api_24" />
+        <Preference
+            android:title="@string/pref_profile_title_extreme"
+            android:summary="@string/pref_profile_summary_extreme"
+            android:key="@string/pref_profile_key_extreme"
+            android:icon="@drawable/ic_baseline_api_24" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_share">
+        <Preference
+            android:title="@string/pref_title_export"
+            android:summary="@string/pref_summary_export"
+            android:key="@string/pref_key_export"
+            android:icon="@drawable/ic_baseline_upload_24" />
+        <EditTextPreference
+            android:title="@string/pref_title_import"
+            android:summary="@string/pref_summary_import"
+            android:key="@string/pref_key_import"
+            android:icon="@drawable/ic_baseline_download_24" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_config">
+        <!-- TODO -->
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_about">
+        <Preference
+            android:title="@string/pref_developer_title"
+            android:summary="@string/pref_developer_summary"
+            android:key="@string/pref_developer_key"
+            android:icon="@drawable/ic_baseline_person_pin_24" />
+        <Preference
+            android:title="@string/pref_source_title"
+            android:summary="@string/pref_source_summary"
+            android:key="@string/pref_source_key"
+            android:icon="@drawable/ic_baseline_code_24" />
+        <Preference
+            android:title="@string/pref_contact_title"
+            android:summary="@string/pref_contact_summary"
+            android:key="@string/pref_contact_key"
+            android:icon="@drawable/ic_baseline_email_24" />
+        <Preference
+            android:title="@string/pref_licenses_title"
+            android:summary="@string/pref_licenses_summary"
+            android:key="@string/pref_licenses_key"
+            android:icon="@drawable/ic_baseline_insert_drive_file_24" />
+    </PreferenceCategory>
+</PreferenceScreen>
