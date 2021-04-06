@@ -7,5 +7,5 @@ object DeviceIdleConstantsProfiles {
     const val LIGHT =         ""
     const val MODERATE =      ""
     const val HIGH =          ""
-    const val EXTREME =       ""
+    const val EXTREME =       "${DeviceIdleConstants.LIGHT_AFTER_INACTIVE_TO}=0"
 }
