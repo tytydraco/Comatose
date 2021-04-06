@@ -7,7 +7,7 @@ object DeviceIdleConstantsProfiles {
 
     /**
      * - Instantly enter light idle 2 minutes after the screen turns off
-     * - Give apps 2 minute to prepare for idle
+     * - Give apps 2 minutes to prepare for idle
      * - Handle light idle maintenance once every 10 minutes initially
      * - Handle light idle maintenance once every hour at the latest
      * - Take at most 2 minutes to fetch a location
