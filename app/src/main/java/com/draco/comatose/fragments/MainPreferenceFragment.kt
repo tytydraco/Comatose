@@ -44,6 +44,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
             SettingsConstants.DEVICE_IDLE_CONSTANTS,
             config
         )
+        Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
     }
 
     /**
