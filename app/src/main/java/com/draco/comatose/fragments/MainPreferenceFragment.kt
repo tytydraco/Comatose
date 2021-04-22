@@ -1,11 +1,13 @@
 package com.draco.comatose.fragments
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import com.draco.comatose.R
 import com.draco.comatose.repositories.constants.SettingsConstants
 import com.draco.comatose.repositories.profiles.DeviceIdleConstantsProfiles
@@ -13,8 +15,15 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainPreferenceFragment : PreferenceFragmentCompat() {
+    private lateinit var sharedPrefs: SharedPreferences
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.main, rootKey)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
     }
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
@@ -44,6 +53,12 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
             SettingsConstants.DEVICE_IDLE_CONSTANTS,
             config
         )
+
+        with (sharedPrefs.edit()) {
+            putString(requireContext().getString(R.string.pref_saved_constants_key), config)
+            apply()
+        }
+
         Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
     }
 
